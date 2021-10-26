@@ -108,7 +108,7 @@
             <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>
-                <h6 class="mb-0">Exercise #1 - Exponent calculator</h6>
+                <h6 class="mb-0">Exercise #1.1 - Exponent calculator</h6>
                 <p class="mb-0 opacity-75">base^exponent ehk 2^4 = 16</p>
               </div>
               <small class="opacity-50 text-nowrap">now</small>
@@ -118,7 +118,7 @@
             <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>
-                <h6 class="mb-0">Exercise #2 - Speeding Fine Calculator</h6>
+                <h6 class="mb-0">Exercise #1.2 - Speeding Fine Calculator</h6>
                 <p class="mb-0 opacity-75">Online speeding calculator to determine the potential penalty</p>
               </div>
               <small class="opacity-50 text-nowrap">3d</small>
@@ -128,8 +128,18 @@
             <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>
-                <h6 class="mb-0">Exercise #3 - EKAP & Time cost</h6>
+                <h6 class="mb-0">Exercise #1.3 - EKAP & Time cost</h6>
                 <p class="mb-0 opacity-75">The Math.trunc() function</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" data-bs-toggle="modal" data-bs-target="#pulseModal" data-bs-whatever="@getbootstrap">
+            <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Exercise #2.2 - Pulse & fitness</h6>
+                <p class="mb-0 opacity-75">Max pulse rate</p>
               </div>
               <small class="opacity-50 text-nowrap">1w</small>
             </div>
@@ -286,6 +296,49 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" onclick="potentailFine()">Calculate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pulse rate modal -->
+  <div class="modal fade" id="pulseModal" tabindex="-1" aria-labelledby="fineModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="fineModalLabel">Pulse rate calculator</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="age" class="col-form-label">Age:</label>
+              <input type="text" class="form-control" id="age">
+            </div>
+            <div class="mb-3">
+              <label for="sex" class="col-form-label">Sex:</label>
+              <input type="text" class="form-control" id="sex">
+            </div>
+            <div class="mb-3">
+              <!-- <label for="training" class="col-form-label">Training intensity:</label>
+              <input type="text" class="form-control" id="training"> -->
+              <label for="training" class="form-label">Training intensity:</label>
+              <select class="form-select" aria-label="Training intensity" id="training">
+                <option selected>Select intensity...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            
+            <div class="mb-3">
+              <p id="pulse-rate"></p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="pulseRate()">Calculate</button>
         </div>
       </div>
     </div>

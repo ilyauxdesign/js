@@ -119,3 +119,56 @@ function ekap() {
 }
 
 
+// Ex 2.2 pulse rate calculator
+
+function pulseRate() {
+
+  let age;
+  age = Number(document.getElementById("age").value)
+
+  let sex;
+  sex = String(document.getElementById("sex").value)
+
+  let training;
+  training = Number(document.getElementById("training").value)
+
+  let pulseRateMax;  // pulseRateMax
+
+  if (isNaN(age) || isNaN(training)) {  // || sex != null 
+
+    document.getElementById("pulse-rate").innerHTML = "Input isn't a number" 
+
+  } else {
+
+    if(sex == "n" || sex == "N"){
+      pulseRateMax = 206 - 0.88 * age;
+    }
+    if(sex == "m" || sex == "M"){
+      pulseRateMax = 220 - age;
+    }
+    
+    // training type
+    let minPulse;
+    let maxPulse;
+    
+    if(training == 1) {
+      minPulse = 0.5 * pulseRateMax;
+      maxPulse = 0.7 * pulseRateMax;
+    } 
+    else if(training == 2) {
+      minPulse = 0.7 * pulseRateMax;
+      maxPulse = 0.8 * pulseRateMax;
+    }
+    else if(training == 3) {
+      minPulse = 0.8 * pulseRateMax;
+      maxPulse = 0.87 * pulseRateMax;
+    }
+
+    minPulse = Math.round(minPulse); // round to the nearest integer
+    maxPulse = Math.round(maxPulse); // round to the nearest integer
+
+    document.getElementById("pulse-rate").innerHTML = " Your pulse rate must be in " + minPulse + " - " + maxPulse + " range.";
+
+  }
+}
+
