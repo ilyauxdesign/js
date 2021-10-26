@@ -1,43 +1,66 @@
 
 
-/*
-var person = prompt("Please enter your name", "Harry Potter");
 
-if (person != null) {
-  document.getElementById("demo").innerHTML =
-  "Hello " + person + "! How are you today?";
-}
 
-*/
 
 // Exercise 1
 
-function ex1() {
+// function for base and exponent
+function baseExp() {
 
-  // get base
+  // define base & define exponent
   let base;
-  base = document.getElementById("base").value;
+  base = Number(document.getElementById("base-number").value)
 
-  //  get exponent
   let exponent;
-  exponent = document.getElementById("exponent").value;
+  exponent = Number(document.getElementById("exponent-number").value)
   
-  if (base != null & exponent != null) {
+  if (isNaN(base) || isNaN(exponent)) { //  (base != null && exponent != null)
 
-      result = base ** exponent; // base^exponent ehk 2^4 = 16
+    document.getElementById("answer").innerHTML = "<br />Input is not a number"
 
-      // $('#myModal').modal(options)
+  } else {
 
-      // document.getElementById("exampleModal").modal("options")
-      // document.getElementById("exampleModal").modal('show')
+    result = base ** exponent; // base^exponent for example 2^4 = 16
 
-      document.querySelector(".modal").classList.add("show");
-      document.querySelector(".modal").style.display = "block";
+    document.getElementById("answer").innerHTML = "<br />" + base + "<sup>" + exponent + "</sup>" + " = " + result;
       
-      document.getElementById("demo").innerHTML = base + "<sup>" + exponent + "</sup>" + "=" + result + ":) How are you today?";
+    //document.getElementById("answer").textContent = "Your result: " + result  // ??? document example modal <br />
+
+    return result;
 
   }
+  
 }
+
+var exampleModal = document.getElementById('exampleModal')
+exampleModal.addEventListener('show.bs.modal', function (event) {
+  // Button that triggered the modal
+  var button = event.relatedTarget
+
+  // Extract info from data-bs-* attributes
+  var exerciseTitle = button.getAttribute('data-bs-whatever')   // 
+
+  // If necessary, you could initiate an AJAX request here
+  // and then do the updating in a callback.
+  //
+  // Update the modal's content.
+  var modalTitle = exampleModal.querySelector('.modal-title')
+  var modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+  var modalBodyAnswer = exampleModal.getElementById("answer") // test ???
+
+  modalTitle.textContent = exerciseTitle + ' calculator'
+  // modalBodyInput.value = recipient
+
+  modalBodyAnswer.value = 123 // test
+
+  // document.getElementById("answer").textContent = baseExp(Number(document.getElementById("base-number").value), Number(document.getElementById("exponent-number").value));
+
+})
+
+
+
 
 // Exercise 2
 
@@ -47,48 +70,167 @@ function potentailPenalty(name,actualSpeed,allowedSpeed) {
   return penalty
 }
 
-function ex2() {
+// potential fine
+function potentailFine() {
 
-  var name = prompt("Please enter your name", "Peter"); // name dialogi aken
+  let name;
+  name = String(document.getElementById("recipient-name").value)
+
+  let allowedSpeed;
+  allowedSpeed = Number(document.getElementById("allowed-speed").value)
+
+  let actualSpeed;
+  actualSpeed = Number(document.getElementById("actual-speed").value)
+
+  var fine = ( actualSpeed - allowedSpeed ) * 3; 
+
+  let fineRate = (fine >= 190) ? "Max rate" : "Regular rate";
+
+  finalFine = (fine >= 190) ? 190 : fine
   
-  if (name != null) {
+  document.getElementById("fine").innerHTML = "Your fine is: " + finalFine + "€ <br />" + fineRate
 
-      allowedSpeed = window.prompt('Please enter allowed speed');
- 
-      actualSpeed = window.prompt('Please enter your actual speed');
+  return fine
+}
 
-      penalty = ( actualSpeed - allowedSpeed ) * 3; // trahvi  arvvutamine
 
-      let fineRate = (penalty >= 190) ? "Max rate" : "Regular rate"; // kas maksimaalne määr või mitte
-    
-      finalFine = (penalty >= 190) ? 190 : penalty  // lqpp summa
+// Exercise 3
+
+function ekap() {
+
+  let ekapAmount;
+  ekapAmount = Number(document.getElementById("ekap").value)
+
+  let weeksAmount;
+  weeksAmount = Number(document.getElementById("weeks-amount").value)
+  
+  if (ekapAmount != null && weeksAmount != null) { // empty or not
+
+      var ajaKulu = (( 26 * ekapAmount ) / weeksAmount ); // calculation
+
+      ajaKulu = Math.round(ajaKulu); // round to the nearest integer
       
-      console.log("Hi, " + name + ". Your fine is: " + finalFine + "€. " + fineRate)  // vastus konsolis
+      // document.getElementById("ajakulu").textContent = "Your ajakulu is: " + ajaKulu;
+
+      document.getElementById("ajakulu").innerHTML = "EKAP amout: " + ekapAmount + "<br/>Amount of weeks: " + weeksAmount + "<br />Ajakulu is " + ajaKulu + " hours per week <br /><br /> <p class=\"text-muted\">ajakulu = ( 26 * EKAP ) / week_amount<br />ajakulu = Math.round(ajakulu)</p>";
+
 
   }
 }
 
+
+
+
+// Exercise 1
+
+// function for base and exponent
+function baseExp() {
+
+  // define base & define exponent
+  let base;
+  base = Number(document.getElementById("base-number").value)
+
+  let exponent;
+  exponent = Number(document.getElementById("exponent-number").value)
+  
+  if (isNaN(base) || isNaN(exponent)) { //  (base != null && exponent != null)
+
+    document.getElementById("answer").innerHTML = "<br />Input is not a number"
+
+  } else {
+
+    result = base ** exponent; // base^exponent for example 2^4 = 16
+
+    document.getElementById("answer").innerHTML = "<br />" + base + "<sup>" + exponent + "</sup>" + " = " + result;
+      
+    //document.getElementById("answer").textContent = "Your result: " + result  // ??? document example modal <br />
+
+    return result;
+
+  }
+  
+}
+
+var exampleModal = document.getElementById('exampleModal')
+exampleModal.addEventListener('show.bs.modal', function (event) {
+  // Button that triggered the modal
+  var button = event.relatedTarget
+
+  // Extract info from data-bs-* attributes
+  var exerciseTitle = button.getAttribute('data-bs-whatever')   // 
+
+  // If necessary, you could initiate an AJAX request here
+  // and then do the updating in a callback.
+  //
+  // Update the modal's content.
+  var modalTitle = exampleModal.querySelector('.modal-title')
+  var modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+  var modalBodyAnswer = exampleModal.getElementById("answer") // test ???
+
+  modalTitle.textContent = exerciseTitle + ' calculator'
+  // modalBodyInput.value = recipient
+
+  modalBodyAnswer.value = 123 // test
+
+  // document.getElementById("answer").textContent = baseExp(Number(document.getElementById("base-number").value), Number(document.getElementById("exponent-number").value));
+
+})
+
+
+
+
+// Exercise 2
+
+// potential penalty
+function potentailPenalty(name,actualSpeed,allowedSpeed) {
+  var penalty = ( actualSpeed - allowedSpeed ) * 3; // base^exponent ehk 2^4 = 16
+  return penalty
+}
+
+// potential fine
+function potentailFine() {
+
+  let name;
+  name = String(document.getElementById("recipient-name").value)
+
+  let allowedSpeed;
+  allowedSpeed = Number(document.getElementById("allowed-speed").value)
+
+  let actualSpeed;
+  actualSpeed = Number(document.getElementById("actual-speed").value)
+
+  var fine = ( actualSpeed - allowedSpeed ) * 3; 
+
+  let fineRate = (fine >= 190) ? "Max rate" : "Regular rate";
+
+  finalFine = (fine >= 190) ? 190 : fine
+  
+  document.getElementById("fine").innerHTML = "Your fine is: " + finalFine + "€ <br />" + fineRate
+
+  return fine
+}
+
+
 // Exercise 3
 
-function ex3() {
+function ekap() {
 
-  var EKAP = prompt("Please enter your EKAP", "4"); // EKAP dialogi aken
+  let ekapAmount;
+  ekapAmount = Number(document.getElementById("ekap").value)
+
+  let weeksAmount;
+  weeksAmount = Number(document.getElementById("weeks-amount").value)
   
-  if (EKAP != null) { // kontrollida kas on midagi yldse sisestatud
+  if (ekapAmount != null && weeksAmount != null) { // empty or not
 
-      week_amount = window.prompt('Please enter amount of weeks'); // amount of weeks dialog
+      var ajaKulu = (( 26 * ekapAmount ) / weeksAmount ); // calculation
 
-      ajakulu = (( 26 * EKAP ) / week_amount ); // calculation
-      ajakulu = Math.round(ajakulu); // round to the nearest integer
-
-      document.querySelector(".modal").classList.add("show");
-      document.querySelector(".modal").style.display = "block";
+      ajaKulu = Math.round(ajaKulu); // round to the nearest integer
       
-      // document.getElementById("demo").innerHTML = base + "<sup>" + exponent + "</sup>" + "=" + result + ":) How are you today?";
+      // document.getElementById("ajakulu").textContent = "Your ajakulu is: " + ajaKulu;
 
-      document.getElementById("demo").innerHTML = "EKAP amout: " + EKAP + "<br/>Amount of weeks: " + week_amount + "<br />Ajakulu is " + ajakulu + " hours per week <br /><br /> <p class=\"text-muted\">ajakulu = ( 26 * EKAP ) / week_amount<br />ajakulu = Math.round(ajakulu)</p>";
-      document.getElementById("exampleModalLabel").innerHTML = "Hi, dear. How are you doing today?"; 
-
+      document.getElementById("ajakulu").innerHTML = "EKAP amout: " + ekapAmount + "<br/>Amount of weeks: " + weeksAmount + "<br />Ajakulu is " + ajaKulu + " hours per week <br /><br /> <p class=\"text-muted\">ajakulu = ( 26 * EKAP ) / week_amount<br />ajakulu = Math.round(ajakulu)</p>";
 
   }
 }
