@@ -118,6 +118,20 @@ function ekap() {
   }
 }
 
+// Ex 1.2 Ice age calculator
+
+function potentailIceAge() {
+
+let temperature;
+temperature = Number(document.getElementById("tempetature").value)
+
+// alert(temperature);
+
+let iceAge = (temperature <= 4) ? "On jäätumise oht" : "Ei ole jäätumise ohtu";
+
+document.getElementById("ice-age").innerHTML = iceAge;
+
+}
 
 // Ex 2.2 pulse rate calculator
 
@@ -143,7 +157,7 @@ function pulseRate() {
     if(sex == "n" || sex == "N"){
       pulseRateMax = 206 - 0.88 * age;
     }
-    if(sex == "m" || sex == "M"){
+    else if(sex == "m" || sex == "M"){
       pulseRateMax = 220 - age;
     }
     

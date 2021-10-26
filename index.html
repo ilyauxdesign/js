@@ -134,6 +134,16 @@
               <small class="opacity-50 text-nowrap">1w</small>
             </div>
           </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" data-bs-toggle="modal" data-bs-target="#iceModal" data-bs-whatever="@getbootstrap">
+            <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Exercise #2.1 - Ice age</h6>
+                <p class="mb-0 opacity-75">Probably not</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
           <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" data-bs-toggle="modal" data-bs-target="#pulseModal" data-bs-whatever="@getbootstrap">
             <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
             <div class="d-flex gap-2 w-100 justify-content-between">
@@ -300,6 +310,33 @@
       </div>
     </div>
   </div>
+  
+  <!-- Ice age Modal -->
+  <div class="modal fade" id="iceModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ice age Calculator</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="tempetature" class="col-form-label">Tempetature:</label>
+              <input type="text" class="form-control" id="tempetature">
+            </div>
+            <div class="mb-3">
+              <p id="ice-age"></p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="potentailIceAge()">Calculate</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Pulse rate modal -->
   <div class="modal fade" id="pulseModal" tabindex="-1" aria-labelledby="fineModalLabel" aria-hidden="true">
@@ -330,7 +367,6 @@
                 <option value="3">3</option>
               </select>
             </div>
-            
             <div class="mb-3">
               <p id="pulse-rate"></p>
             </div>
