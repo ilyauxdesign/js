@@ -148,16 +148,16 @@ function pulseRate() {
 
   let pulseRateMax;  // pulseRateMax
 
-  if (isNaN(age) || isNaN(training)) {  // || sex != null 
+  if (isNaN(age) || sex !== null || isNaN(training)) {  // sex !== 'undefined'
 
     document.getElementById("pulse-rate").innerHTML = "Input isn't a number" 
 
   } else {
 
-    if(sex == "n" || sex == "N"){
+    if (sex == "n" || sex == "N") {
       pulseRateMax = 206 - 0.88 * age;
     }
-    else if(sex == "m" || sex == "M"){
+    else if (sex == "m" || sex == "M") {
       pulseRateMax = 220 - age;
     }
     
@@ -165,15 +165,15 @@ function pulseRate() {
     let minPulse;
     let maxPulse;
     
-    if(training == 1) {
+    if (training == 1) {
       minPulse = 0.5 * pulseRateMax;
       maxPulse = 0.7 * pulseRateMax;
     } 
-    else if(training == 2) {
+    else if (training == 2) {
       minPulse = 0.7 * pulseRateMax;
       maxPulse = 0.8 * pulseRateMax;
     }
-    else if(training == 3) {
+    else if (training == 3) {
       minPulse = 0.8 * pulseRateMax;
       maxPulse = 0.87 * pulseRateMax;
     }
@@ -186,3 +186,88 @@ function pulseRate() {
   }
 }
 
+// Ex 1.3 Passenger seat calculator
+
+function passengerSeat() {
+
+  let choicePersonal;
+  // temperature = Number(document.getElementById("personal-outlined").value)
+  choicePersonal = document.getElementById("personal-outlined").value
+
+  let choiceRandom;
+  // temperature = Number(document.getElementById("personal-outlined").value)
+  choiceRandom = document.getElementById("random-outlined").value
+  
+  alert(choicePersonal + " " + choiceRandom);
+  
+  // let iceAge = (temperature <= 4) ? "On jäätumise oht" : "Ei ole jäätumise ohtu";
+  
+  let yourSeat = Math.floor(Math.random() * 100);
+
+  document.getElementById("passenger").innerHTML = yourSeat;
+  
+}
+
+  function myFunction() {
+    var personalBox = document.getElementById("personal-outlined");
+    var text = document.getElementById("window-seat-option");
+    if (personalBox.checked == true){
+      alert(personalBox);
+      text.style.display = "block";
+      document.getElementById("passenger").innerHTML = "Check your seat"
+    } else {
+       text.style.display = "none";
+    }
+  }
+
+  function myRandom() {
+    var randomBox = document.getElementById("random-outlined");
+    var text = document.getElementById("window-seat-option");
+    if (randomBox.toggle == true){
+      text.style.display = "none";
+      
+    } else {
+      text.style.display = "block";
+      
+      let yourSeat = Math.floor(Math.random() * 100);
+      document.getElementById("passenger").innerHTML = "Your seat: " + yourSeat;
+    }
+  }
+
+  // https://getbootstrap.com/docs/5.1/components/buttons/#button-plugin
+
+//   document.addEventListener("DOMContentLoaded", function(){
+//     var buttons = document.querySelectorAll(".btn");
+//     buttons.forEach(function(button){
+//       	button.addEventListener("click", function(e){
+//           	var btn = new bootstrap.Button(e.target);
+//             btn.toggle();
+//         });
+//     });
+// });
+
+
+// Exercise 3.1
+
+// function for alarm
+function alarmLoop() {
+
+  // define base & define exponent
+  let alarms;
+  alarms = Number(document.getElementById("alarms-number").value)
+
+  if (isNaN(alarms)) { //  
+
+    document.getElementById("alarm_output").innerHTML = "<br />Input is not a number"
+
+  } else {
+  
+  let text
+  for (let i = 0; i < alarms; i++) {
+    text += "Rise and shine! <br>";
+  }
+  document.getElementById("alarm_output").innerHTML = text
+  
+  }
+  
+}

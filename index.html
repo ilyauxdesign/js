@@ -154,6 +154,26 @@
               <small class="opacity-50 text-nowrap">1w</small>
             </div>
           </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" data-bs-toggle="modal" data-bs-target="#seatModal" data-bs-whatever="@getbootstrap">
+            <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Exercise #2.3 - Passenger seat</h6>
+                <p class="mb-0 opacity-75">randint()</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" data-bs-toggle="modal" data-bs-target="#alarmModal" data-bs-whatever="@getbootstrap">
+            <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Exercise #3.1 - Alarm loop</h6>
+                <p class="mb-0 opacity-75">randint()</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
         </div>
 
       </div>
@@ -224,14 +244,19 @@
         </div>
         <div class="modal-body">
           <form>
-            <div class="mb-3">
-              <label for="base-number" class="col-form-label">Base:</label>
-              <input type="text" class="form-control" id="base-number">
+            <div class="row align-items-center">
+
+              <div class="mb-3 col-sm-3">
+                <label for="base-number" class="col-form-label">Base:</label>
+                <input type="number" class="form-control col-sm-3" id="base-number">
+              </div>
+              <div class="mb-3 col-sm-3">
+                <label for="exponent-number" class="col-form-label">Exponent:</label>
+                <input type="number" class="form-control col-sm-3" id="exponent-number">
+              </div>
+
             </div>
-            <div class="mb-3">
-              <label for="exponent-number" class="col-form-label">Exponent:</label>
-              <input type="text" class="form-control" id="exponent-number">
-            </div>
+            
             <div class="mb-3">
               <p id="answer"></p>
             </div>
@@ -257,11 +282,11 @@
           <form>
             <div class="mb-3">
               <label for="ekap" class="col-form-label">EKAP amount:</label>
-              <input type="text" class="form-control" id="ekap">
+              <input type="number" class="form-control" id="ekap">
             </div>
             <div class="mb-3">
               <label for="weeks-amount" class="col-form-label">Amount of weeks:</label>
-              <input type="text" class="form-control" id="weeks-amount">
+              <input type="number" class="form-control" id="weeks-amount">
             </div>
             <div class="mb-3">
               <p id="ajakulu"></p>
@@ -323,7 +348,7 @@
           <form>
             <div class="mb-3">
               <label for="tempetature" class="col-form-label">Tempetature:</label>
-              <input type="text" class="form-control" id="tempetature">
+              <input type="number" class="form-control form-control-lg" id="tempetature">
             </div>
             <div class="mb-3">
               <p id="ice-age"></p>
@@ -350,7 +375,7 @@
           <form>
             <div class="mb-3">
               <label for="age" class="col-form-label">Age:</label>
-              <input type="text" class="form-control" id="age">
+              <input type="number" class="form-control" id="age">
             </div>
             <div class="mb-3">
               <label for="sex" class="col-form-label">Sex:</label>
@@ -360,7 +385,7 @@
               <!-- <label for="training" class="col-form-label">Training intensity:</label>
               <input type="text" class="form-control" id="training"> -->
               <label for="training" class="form-label">Training intensity:</label>
-              <select class="form-select" aria-label="Training intensity" id="training">
+              <select class="form-select form-control-lg" aria-label="Training intensity" id="training">
                 <option selected>Select intensity...</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -375,6 +400,125 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" onclick="pulseRate()">Calculate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pulse rate modal -->
+  <div class="modal fade" id="pulseModal" tabindex="-1" aria-labelledby="fineModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="fineModalLabel">Pulse rate calculator</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="age" class="col-form-label">Age:</label>
+              <input type="number" class="form-control" id="age">
+            </div>
+            <div class="mb-3">
+              <label for="sex" class="col-form-label">Sex:</label>
+              <input type="text" class="form-control" id="sex">
+            </div>
+            <div class="mb-3">
+              <!-- <label for="training" class="col-form-label">Training intensity:</label>
+              <input type="text" class="form-control" id="training"> -->
+              <label for="training" class="form-label">Training intensity:</label>
+              <select class="form-select form-control-lg" aria-label="Training intensity" id="training">
+                <option selected>Select intensity...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <p id="pulse-rate"></p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="pulseRate()">Calculate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Passenger seat modal -->
+  <div class="modal fade" id="seatModal" tabindex="-1" aria-labelledby="fineModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="fineModalLabel">Passenger seat</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <p class="mb-0">Seat selection</p>
+              <input type="radio" class="btn-check" name="options-outlined" id="personal-outlined" autocomplete="off" onclick="myPersonal()" checked>
+              <label class="btn btn-outline-success" for="personal-outlined">I choose my seat</label>
+
+              <input type="radio" class="btn-check" name="options-outlined" id="random-outlined" autocomplete="off" onclick="myRandom()">
+              <label class="btn btn-outline-danger" for="random-outlined">Allocate randomly</label>
+            </div>
+
+            <div class="mb-3" style="display:none" id="window-seat-option">
+              <p class="mb-0">Seat with window</p>
+              <input type="radio" class="btn-check" name="window-outlined" id="window-seat" autocomplete="off" checked>
+              <label class="btn btn-outline-primary" for="window-seat">Window seat</label>
+
+              <input type="radio" class="btn-check" name="window-outlined" id="other-seat" autocomplete="off">
+              <label class="btn btn-outline-primary" for="other-seat">Other</label>
+            </div>
+
+            <div class="mb-3">
+              <p id="passenger"></p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary" onclick="passengerSeat()">Calculate</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Alarm loop Modal -->
+  <div class="modal fade" id="alarmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Calculator</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row align-items-center">
+
+              <div class="mb-3 col-sm-4">
+                <label for="alarms-number" class="col-form-label">How many alarms:</label>
+                <input type="number" class="form-control col-sm-4" id="alarms-number">
+              </div>
+              <!-- <div class="mb-3 col-sm-3">
+                <label for="exponent-number" class="col-form-label">Exponent:</label>
+                <input type="number" class="form-control col-sm-3" id="exponent-number">
+              </div> -->
+
+            </div>
+            
+            <div class="mb-3">
+              <p id="alarm_output"></p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="alarmLoop()">Calculate</button>
         </div>
       </div>
     </div>
