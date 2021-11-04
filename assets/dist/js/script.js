@@ -271,3 +271,32 @@ function alarmLoop() {
   }
   
 }
+
+
+// Exercise 3.2
+
+function carrotsLoop() {
+
+  // define base & define exponent
+  let circles;
+  circles = Number(document.getElementById("circle-number").value)
+
+  if (isNaN(circles)) { //  
+
+    document.getElementById("carrots_output").innerHTML = "<br />Input is not a number"
+
+  } else {
+  
+  let carrots = 0;
+  let circle = 1
+  while (circle <= circles) {
+    if(circle % 2 == 0) {carrots = carrots + circle}
+    circle++
+    // text += "Rise and shine! <br>";
+  }
+  
+  document.getElementById("carrots_output").innerHTML = "You have got " + carrots + " carrots for your circles."
+  }
+  
+}
+
