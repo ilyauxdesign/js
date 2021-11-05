@@ -197,7 +197,30 @@ function passengerSeat() {
   let choiceRandom;
   // temperature = Number(document.getElementById("personal-outlined").value)
   choiceRandom = document.getElementById("random-outlined").value
-  
+
+  // ainult testimiseks
+  choicePersonal = false
+  choiceRandom = true
+
+  if(choicePersonal) {
+    // kontrolli, kas ta valis akna voi muu
+    let choice = 'window'
+    if(choice === 'window'){
+      console.log('window')
+    } else {
+      console.log('other')
+    }
+  }
+  if(choiceRandom) {
+    let generate = Math.floor(Math.random() * 3 + 1)
+    // kontrolli, juhul kui see on 1 voi 2 - muu koht, kui on 3 - aken
+    if(generate < 3 ){
+      console.log('other')
+    } else {
+      console.log('window')
+    }
+  }
+
   alert(choicePersonal + " " + choiceRandom);
   
   // let iceAge = (temperature <= 4) ? "On jäätumise oht" : "Ei ole jäätumise ohtu";
