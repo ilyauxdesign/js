@@ -164,6 +164,19 @@
               <small class="opacity-50 text-nowrap">1w</small>
             </div>
           </a>
+
+
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" data-bs-toggle="modal" data-bs-target="#spamModal" data-bs-whatever="@getbootstrap">
+            <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Exercise #2.4 - Spam filter</h6>
+                <p class="mb-0 opacity-75">Kalmer teeb filtrit</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
+
           <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" data-bs-toggle="modal" data-bs-target="#alarmModal" data-bs-whatever="@getbootstrap">
             <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
             <div class="d-flex gap-2 w-100 justify-content-between">
@@ -180,6 +193,26 @@
               <div>
                 <h6 class="mb-0">Exercise #3.2 - Carrots and circles</h6>
                 <p class="mb-0 opacity-75">randint()</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" data-bs-toggle="modal" data-bs-target="#randomModal" data-bs-whatever="@getbootstrap">
+            <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Exercise #3.3 - Random numbers</h6>
+                <p class="mb-0 opacity-75">Math.floor(Math.random() * 6);</p>
+              </div>
+              <small class="opacity-50 text-nowrap">1w</small>
+            </div>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true" data-bs-toggle="modal" data-bs-target="#snowwhiteModal" data-bs-whatever="@getbootstrap">
+            <img src="./assets/img/js_logo.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Exercise #3.4 - Greedy snow white & the seven dwarfs</h6>
+                <p class="mb-0 opacity-75">// Lumivalgekesel oli 14 õuna</p>
               </div>
               <small class="opacity-50 text-nowrap">1w</small>
             </div>
@@ -492,7 +525,50 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="seatAlternative()">Alternative</button>
           <!-- <button type="button" class="btn btn-primary" onclick="passengerSeat()">Calculate</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Spam modal -->
+  <div class="modal fade" id="spamModal" tabindex="-1" aria-labelledby="fineModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="fineModalLabel">Spam filter</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="size" class="col-form-label">Letter size in megabites:</label>
+              <input type="number" class="form-control" id="size">
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="col-form-label">Subject:</label>
+              <input type="text" class="form-control" id="subject">
+            </div>
+            <div class="mb-3">
+              <!-- <label for="training" class="col-form-label">Training intensity:</label>
+              <input type="text" class="form-control" id="training"> -->
+              <label for="attachment" class="form-label">Attachment:</label>
+              <select class="form-select form-control-lg" aria-label="Attachment" id="attachment">
+                <option selected>Select attachment...</option>
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <p id="spam-output"></p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="spamFilter()">Calculate</button>
         </div>
       </div>
     </div>
@@ -565,6 +641,74 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" onclick="carrotsLoop()">Calculate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Random numbers loop Modal -->
+  <div class="modal fade" id="randomModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Calculator</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row align-items-center">
+
+              <div class="mb-3 col-sm-6">
+                <label for="random-numbers" class="col-form-label">How many numbers?:</label>
+                <input type="number" class="form-control col-sm-6" id="random-numbers">
+              </div>
+
+            </div>
+            
+            <div class="mb-3">
+              <p id="random_output"></p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="randomLoop()">Generate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Greedy snowwhite Modal -->
+  <div class="modal fade" id="snowwhiteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Calculator</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row align-items-center">
+
+              <div class="mb-3">
+                <label for="base-number" class="col-form-label">How many dwarfs:</label>
+                <input type="number" class="form-control" id="dwarfs-number" value="5">
+              </div>
+              <div class="mb-3">
+                <label for="exponent-number" class="col-form-label">How many apples has snow white:</label>
+                <input type="number" class="form-control" id="apples-number" value="14">
+              </div>
+
+            </div>
+            
+            <div class="mb-3">
+              <p id="apple_output"></p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="appleLoop()">Calculate</button>
         </div>
       </div>
     </div>

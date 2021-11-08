@@ -186,7 +186,7 @@ function pulseRate() {
   }
 }
 
-// Ex 1.3 Passenger seat calculator
+// Ex 2.3 Passenger seat calculator
 
 function passengerSeat() {
 
@@ -270,6 +270,63 @@ function passengerSeat() {
 // });
 
 
+function seatAlternative() {
+// kasutaja sisend 
+let valik = prompt('Kas soovite valida istekoht ise voi loosiga: ');
+ // tingimuslouse 
+ // v                                                                     
+ if (valik === 'ise') { 
+
+   // ise valib 
+   console.log('Valisite ise.'); 
+   let koht = prompt('Kas soovid istuda akna juures voi muu koha peal? '); 
+   if(koht === 'aken')  { 
+     console.log('Aknakoht'); 
+    } else { console.log('Muu koht'); }
+
+  } 
+  else { 
+  // loos 
+  let toenaosus = Math.trunc(Math.ceil( Math.random()*3)) 
+  console.log(toenaosus);
+  } 
+  
+}
+
+// Ex 2.4 spam filter
+
+function spamFilter() {
+
+  let letterSize;
+  letterSize = Number(document.getElementById("size").value)
+
+  let letterSubject;
+  letterSubject = String(document.getElementById("subject").value)
+
+  let letterAttachment;
+  letterAttachment = Number(document.getElementById("attachment").value)
+
+  // ekapAmount != null && weeksAmount != null
+
+  //  ( 
+
+  //  alert(letterSubject);
+
+  // letterSize <= 1 && 
+
+  if ( (letterAttachment === 'yes' && letterSize >= 1) && letterSubject === null ) {  // sex !== 'undefined'
+
+    document.getElementById("spam-output").innerHTML = "Spam"; 
+    
+  } else {
+
+    document.getElementById("spam-output").innerHTML = "Not spam";
+     
+  }
+
+}
+
+
 // Exercise 3.1
 
 // function for alarm
@@ -285,7 +342,7 @@ function alarmLoop() {
 
   } else {
   
-  let text
+  let text = ""
   for (let i = 0; i < alarms; i++) {
     text += "Rise and shine! <br>";
   }
@@ -323,6 +380,66 @@ function carrotsLoop() {
   
 }
 
-// new comment
+
+// Exercise 3.3 - Täringumäng 
+
+// function for random numbers
+function randomLoop() {
+
+  // define base & define exponent
+  let random_numbers;
+  random_numbers = Number(document.getElementById("random-numbers").value)
+
+  if (isNaN(random_numbers)) { //  
+
+    document.getElementById("random_output").innerHTML = "<br />Input is not a number"
+
+  } else {
+  
+  let text = ""
+  for (let i = 0; i < random_numbers; i++) {
+    text += "<br /> " + Math.floor((Math.random() * 6) + 1); // +1
+  }
+  document.getElementById("random_output").innerHTML = text
+  
+  }
+  
+}
+
+
+// Exercise 3.4 - Greedy snowflake & Õunte jagamine 
+
+// function for loop
+function appleLoop() {
+
+  // define dwarfs & apples amount
+  let dwarfs;
+  dwarfs = Number(document.getElementById("dwarfs-number").value)
+
+  let apples_total;
+  apples_total = Number(document.getElementById("apples-number").value)
+  
+  if (isNaN(dwarfs) || isNaN(apples_total)) { //  (base != null && exponent != null)
+
+    document.getElementById("apple_output").innerHTML = "<br />Input is not a number"
+
+  } else {
+
+    let text = ""
+    for (let i = 1; i <= dwarfs; i++) {
+      let apples = Math.floor(Math.random() * 2) + 1
+      apples_total = apples_total - apples
+      text += "<br />" + i + " . dwarf got " + apples 
+      console.log(i + " . dwarf got " + apples)
+    } 
+
+    //output
+    document.getElementById("apple_output").innerHTML = text + "<p class=\"mb-0 opacity-50\">Snow white is left with " + apples_total + " apples.</p>"
+
+  }
+  
+}
+
+
 
 
