@@ -279,16 +279,23 @@ let valik = prompt('Kas soovite valida istekoht ise voi loosiga: ');
 
    // ise valib 
    console.log('Valisite ise.'); 
+   document.getElementById("passenger-alternative").innerHTML = "Valisite ise.";
    let koht = prompt('Kas soovid istuda akna juures voi muu koha peal? '); 
    if(koht === 'aken')  { 
      console.log('Aknakoht'); 
-    } else { console.log('Muu koht'); }
+     document.getElementById("passenger-alternative").innerHTML = "Aknakoht.";
+    } else { 
+      console.log('Muu koht'); 
+      document.getElementById("passenger-alternative").innerHTML = "Muu koht.";
+    }
 
   } 
   else { 
   // loos 
   let toenaosus = Math.trunc(Math.ceil( Math.random()*3)) 
   console.log(toenaosus);
+  document.getElementById("passenger-alternative").innerHTML = toenaosus;
+
   } 
   
 }
